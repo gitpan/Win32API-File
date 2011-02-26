@@ -10,7 +10,7 @@ use Fcntl qw( O_RDONLY O_RDWR O_WRONLY O_APPEND O_BINARY O_TEXT );
 use vars qw( $VERSION @ISA );
 use vars qw( @EXPORT @EXPORT_OK @EXPORT_FAIL %EXPORT_TAGS );
 
-$VERSION= '0.1101';
+$VERSION= '0.1101_01';
 
 use base qw( Exporter DynaLoader Tie::Handle IO::File );
 
@@ -716,7 +716,7 @@ sub READLINE {
 	my $self = shift;
 	my $line = "";
 
-	while ((index $line, $/) == $[-1) { # read until end of line marker
+	while ((index $line, $/) == -1) { # read until end of line marker
 		my $char = $self->GETC();
 
 		last if !defined $char || $char eq '';

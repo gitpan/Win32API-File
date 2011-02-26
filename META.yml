@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Win32API-File
-version:            0.1101
+version:            0.1101_01
 abstract:           Low-level access to Win32 system API calls for files/dirs.
 author:
     - Tye McQueen <tye@metronet.com>
@@ -8,17 +8,21 @@ license:            perl
 distribution_type:  module
 configure_requires:
     ExtUtils::MakeMaker:  0
+build_requires:
+    ExtUtils::MakeMaker:  0
 requires:
     File::Spec:    0
     IO::File:      0
     Math::BigInt:  0
     perl:          5.001
     Win32:         0
+resources:
+    repository:  http://github.com/chorny/Win32API-File
 no_index:
     directory:
         - t
         - inc
-generated_by:       ExtUtils::MakeMaker version 6.48
+generated_by:       ExtUtils::MakeMaker version 6.56
 meta-spec:
     url:      http://module-build.sourceforge.net/META-spec-v1.4.html
     version:  1.4
